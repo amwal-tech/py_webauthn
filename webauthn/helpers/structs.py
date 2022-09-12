@@ -372,7 +372,6 @@ class RegistrationCredential(WebAuthnBaseModel):
 
     Attributes:
         `id`: The Base64URL-encoded representation of raw_id
-        `raw_id`: A byte sequence representing the credential's unique identifier
         `response`: The authenticator's attesation data
         `type`: The literal string `"public-key"`
         (optional) `transports`: The authenticator's supported methods of communication with a client/browser
@@ -381,7 +380,6 @@ class RegistrationCredential(WebAuthnBaseModel):
     """
 
     id: str
-    raw_id: bytes
     response: AuthenticatorAttestationResponse
     transports: Optional[List[AuthenticatorTransport]] = None
     type: Literal[
